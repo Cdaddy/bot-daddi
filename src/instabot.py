@@ -157,6 +157,34 @@ class InstaBot:
                  tag_blacklist=[],
                  unwanted_username_list=[],
                  unfollow_whitelist=[]):
+        """
+
+        :param login: set a bot username
+        :param password: bot password
+        :param like_per_day: how many photos/videos to like
+        :param media_max_like: max number of likes in a day
+        :param media_min_like: min number of likes in a day
+        :param follow_per_day:
+        :param follow_time:
+        :param unfollow_per_day:
+        :param start_at_h:
+        :param start_at_m:
+        :param end_at_h:
+        :param end_at_m:
+        :param database_name:
+        :param comment_list:
+        :param comments_per_day:
+        :param tag_list:
+        :param max_like_for_one_tag:
+        :param unfollow_break_min:
+        :param unfollow_break_max:
+        :param log_mod:
+        :param proxy:
+        :param user_blacklist:
+        :param tag_blacklist:
+        :param unwanted_username_list:
+        :param unfollow_whitelist:
+        """
 
         self.database_name = database_name
         self.follows_db = sqlite3.connect(database_name, timeout=0, isolation_level=None)
@@ -228,8 +256,7 @@ class InstaBot:
         self.media_by_user = []
         self.unwanted_username_list = unwanted_username_list
         now_time = datetime.datetime.now()
-        log_string = 'Instabot v1.2.0 started at %s:\n' % \
-                     (now_time.strftime("%d.%m.%Y %H:%M"))
+        log_string = 'Instabot5000 LAUNCHED AT {}:\n'.format((now_time.strftime("%d.%m.%Y %H:%M")))
         self.write_log(log_string)
         self.login()
         self.populate_user_blacklist()
